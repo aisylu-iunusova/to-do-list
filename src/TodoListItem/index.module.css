@@ -1,0 +1,12 @@
+.todoListItem {
+  width: 100%;
+
+  padding: 10px;
+
+  color: #000;
+  list-style: none;
+}
+
+.todoListItem input {
+  margin-right: 10px;
+}

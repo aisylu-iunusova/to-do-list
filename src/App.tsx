@@ -1,12 +1,25 @@
-import React from "react";
-import "./App.css";
+import React, { useState } from "react";
+import styles from "./App.module.css";
+import TodoListItem, { ToDoProps } from "./TodoListItem";
 
-function App() {
+const initialTodos: ToDoProps[] = [
+  {
+    text: "Cook the dinner",
+    complete: false,
+  },
+  {
+    text: "Read the manga",
+    complete: true,
+  },
+];
+const App = () => {
+  const [todos, setTodos] = useState(initialTodos);
   return (
-    <div className="App">
-      <li>hello, hello</li>
+    <div className={styles.toDoList}>
+      <TodoListItem text={todos[0].text} complete={todos[0].complete} />
+      <TodoListItem text={todos[1].text} complete={todos[1].complete} />
     </div>
   );
-}
+};
 
 export default App;
