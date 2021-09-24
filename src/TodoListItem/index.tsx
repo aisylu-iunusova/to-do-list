@@ -1,17 +1,32 @@
 import React from "react";
 import styles from "./index.module.css";
 
-export type ToDoProps = {
+type ToggleTodo = (selectedTodo: Todo) => void;
+
+export type Todo = {
   text?: string;
-  complete?: boolean;
+  complete: boolean;
 };
 
-const TodoListItem: React.FC<ToDoProps> = ({ text, complete }) => {
+type Props = {
+  todo: Todo;
+  toggleTodo: ToggleTodo;
+};
+
+const TodoListItem = ({ todo, toggleTodo }: Props) => {
   return (
     <li className={styles.todoListItem}>
-      <label style={{ textDecoration: complete ? "line-through" : undefined }}>
-        <input type="checkbox" checked={complete} />
-        {text}
+      <label
+        style={{ textDecoration: todo.complete ? "line-through" : undefined }}
+      >
+        <input
+          type="checkbox"
+          checked={todo.complete}
+          onClick={() => {
+            toggleTodo(todo);
+          }}
+        />
+        {todo.text}
       </label>
     </li>
   );
