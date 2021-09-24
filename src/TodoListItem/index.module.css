@@ -3,10 +3,15 @@
 
   /* padding: 10px 0; */
 
-  color: #000;
+  color: rgb(50, 48, 148);
   list-style: none;
 }
 
 .todoListItem input {
   margin-right: 10px;
+}
+
+.todoListItemDone {
+  text-decoration: line-through;
+  color: rgb(174, 174, 179);
 }

@@ -15,7 +15,7 @@ const AddTodoForm = ({ addTodo }: Props) => {
         className={styles.formInput}
         type="text"
         value={text}
-        placeholder="next"
+        placeholder="Next to-do"
         onChange={(e) => {
           setText(e.target.value);
         }}

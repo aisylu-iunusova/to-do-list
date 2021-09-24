@@ -16,9 +16,7 @@ type Props = {
 const TodoListItem = ({ todo, toggleTodo }: Props) => {
   return (
     <li className={styles.todoListItem}>
-      <label
-        style={{ textDecoration: todo.complete ? "line-through" : undefined }}
-      >
+      <label className={todo.complete ? styles.todoListItemDone : ""}>
         <input
           type="checkbox"
           checked={todo.complete}
