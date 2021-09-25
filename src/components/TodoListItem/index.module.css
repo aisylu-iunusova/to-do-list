@@ -1,15 +1,20 @@
 .todoListItem {
   display: grid;
   grid-template-columns: 80% 20%;
+  gap: 10px;
 
   width: 100%;
-
-  /* padding: 10px 0; */
 
   color: rgb(50, 48, 148);
   list-style: none;
 }
 
+.todoListItem label {
+  display: grid;
+  grid-template-columns: 1fr 9fr 1fr;
+
+  align-items: center;
+}
 .todoListItem input {
   margin-right: 10px;
 }
@@ -17,6 +22,16 @@
 .todoListItemDone {
   text-decoration: line-through;
   color: rgb(174, 174, 179);
+}
+
+.delBtn {
+  display: none;
+  height: 20px;
+  width: 20px;
+}
+
+.todoListItem label:hover .delBtn {
+  display: block;
 }
 
 .date {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./App.module.css";
-import TodoListItem, { Todo } from "./TodoListItem";
-import AddTodoForm, { AddTodo } from "./AddTodoForm";
+import TodoListItem, { Todo } from "./components/TodoListItem";
+import AddTodoForm, { AddTodo } from "./components/AddTodoForm";
 
 const initialTodos: Todo[] = [
   {
@@ -40,11 +40,20 @@ const App = () => {
     }
   };
 
+  const removeTodo = (delTodo: Todo) => {
+    todos.splice(todos.indexOf(delTodo), 1);
+    return setTodos(todos);
+  };
+
   return (
     <>
       <div className={styles.toDoList}>
         {todos.map((item) => (
-          <TodoListItem todo={item} toggleTodo={toggleTodo} />
+          <TodoListItem
+            todo={item}
+            toggleTodo={toggleTodo}
+            removeTodo={removeTodo}
+          />
         ))}
         <AddTodoForm addTodo={addTodo} />
       </div>
