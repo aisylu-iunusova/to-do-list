@@ -1,6 +1,6 @@
 .toDoList {
   display: grid;
-  gap: 15px;
+  gap: 20px;
 
   min-width: 400px;
   padding: 20px;

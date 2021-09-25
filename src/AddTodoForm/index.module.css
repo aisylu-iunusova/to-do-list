@@ -36,14 +36,14 @@ form {
 }
 
 .btn:hover {
-  background-color: #a99ee4;
+  background: radial-gradient(#a99ee4, #fa97e4);
   border-color: #a99ee4;
 
   color: #fff;
 }
 
 .btn:active {
-  background-color: rgb(104, 82, 155);
+  background: rgb(104, 82, 155);
   border: none;
   transform: scale(0.95);
 }

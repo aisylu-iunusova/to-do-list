@@ -6,6 +6,8 @@ type ToggleTodo = (selectedTodo: Todo) => void;
 export type Todo = {
   text?: string;
   complete: boolean;
+  date: string;
+  time: string;
 };
 
 type Props = {
@@ -26,6 +28,10 @@ const TodoListItem = ({ todo, toggleTodo }: Props) => {
         />
         {todo.text}
       </label>
+      <div className={styles.date}>
+        <span>{todo.date}</span>
+        <span>{todo.time}</span>
+      </div>
     </li>
   );
 };

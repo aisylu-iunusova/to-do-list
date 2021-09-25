@@ -7,10 +7,14 @@ const initialTodos: Todo[] = [
   {
     text: "Cook the dinner",
     complete: false,
+    date: "25.09.2021",
+    time: "7:42",
   },
   {
     text: "Read the manga",
     complete: true,
+    date: "8.14.2020",
+    time: "7:42",
   },
 ];
 
@@ -30,7 +34,9 @@ const App = () => {
 
   const addTodo: AddTodo = (text) => {
     if (text) {
-      return setTodos([...todos, { text, complete: false }]);
+      const date = new Date().toLocaleDateString();
+      const time = new Date().toLocaleTimeString().slice(0, -3);
+      return setTodos([...todos, { text, complete: false, date, time }]);
     }
   };
 
