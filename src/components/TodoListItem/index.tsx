@@ -24,7 +24,7 @@ const TodoListItem = ({ todo, toggleTodo, removeTodo }: Props) => {
       <label className={todo.complete ? styles.todoListItemDone : ""}>
         <input
           type="checkbox"
-          checked={todo.complete}
+          defaultChecked={todo.complete}
           onClick={() => {
             toggleTodo(todo);
           }}

@@ -3,21 +3,6 @@ import styles from "./App.module.css";
 import TodoListItem, { Todo } from "./components/TodoListItem";
 import AddTodoForm, { AddTodo } from "./components/AddTodoForm";
 
-// const initialTodos: Todo[] = [
-//   {
-//     text: "Cook the dinner",
-//     complete: false,
-//     date: "25.09.2021",
-//     time: "7:42",
-//   },
-//   {
-//     text: "Read the manga",
-//     complete: true,
-//     date: "8.14.2020",
-//     time: "7:42",
-//   },
-// ];
-
 const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
@@ -30,7 +15,6 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem("Todo", JSON.stringify(todos));
-    console.log(localStorage.getItem("Todo"));
   }, [todos]);
 
   const toggleTodo = (selectedTodo: Todo) => {
@@ -57,6 +41,13 @@ const App = () => {
     setTodos(todos);
   };
 
+  // const removeCheck = (selectedTodo: Todo) => {};
+
+  const removeAll = () => {
+    setTodos([]);
+    localStorage.removeItem("Todo");
+  };
+
   return (
     <>
       <div className={styles.toDoList}>
@@ -69,6 +60,18 @@ const App = () => {
           />
         ))}
         <AddTodoForm addTodo={addTodo} />
+        <div className={styles.settings}>
+          <button
+            className={styles.btnDelAll}
+            type="button"
+            onClick={removeAll}
+          >
+            Remove all
+          </button>
+          {/* <button type="button" onClick={removeCheck}>
+          Remove check
+        </button> */}
+        </div>
       </div>
     </>
   );
